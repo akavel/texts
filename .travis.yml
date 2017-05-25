@@ -1,0 +1,30 @@
+# Render with Hugo
+# http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/
+# https://github.com/haruair/haruair.github.io/blob/code/.travis.yml
+language: go
+git:
+  submodules: true
+install:
+  - go get -v github.com/spf13/hugo
+script:
+  - hugo
+
+## Rendering based on: https://github.com/haruair/haruair.github.io/blob/code/.travis.yml
+#language: go
+#go:
+#  - 1.7.1
+#script:
+#  - git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
+#  - go get -u -v github.com/spf13/hugo
+#  - git submodule init
+#  - hugo
+
+# Deploy to GitHub pages
+# https://www.metachris.com/2017/04/continuous-deployment-hugo---travis-ci--github-pages/
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: public
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
