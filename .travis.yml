@@ -17,10 +17,11 @@ script:
 #  - git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
 #  - go get -u -v github.com/spf13/hugo
 #  - git submodule init
-#  - hugo 
+#  - hugo
 
 # Deploy to GitHub pages
 # https://www.metachris.com/2017/04/continuous-deployment-hugo---travis-ci--github-pages/
+# https://docs.travis-ci.com/user/deployment/pages/
 deploy:
   provider: pages
   skip_cleanup: true
@@ -28,3 +29,5 @@ deploy:
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
   on:
     branch: master
+  repo: akavel/akavel.github.io
+  target_branch: master
