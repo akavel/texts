@@ -35,6 +35,7 @@ In simple human-readable words, this would decode roughly as: "*fix* is a functi
 Uh, oh — OK; but then, um... to start with, where to take the f's *initial argument* from? or does it, I dunno, magically appear out of thin air, or what? Also, while we're at it — this kinda looks like calling the function f infinitely; isn't this a classic example of infinite recursion? why does nix-repl actually print *some result*, not to mention that *so quickly*?
 
 To answer above questions, one must notice some characteristics of the Nix language, which are not usually found in imperative languages (but much more often encountered in functional/declarative ones). Specifically:
+
   1. **Nix is a *"lazy"* language.** This means, that expressions are not evaluated immediately; quite the reverse — they're kept in their "symbolic" form as long as possible, and evaluated only as late as possible, and *only if really necessary*. If not necessary, they're simply happily ignored and forgotten!
   2. Lexically, all symbols defined inside the `let` keyword are "mutually recursive", also to themselves — **order of definitions inside single `let` is totally irrelevant.**
 
