@@ -7,18 +7,7 @@ git:
 install:
   - go get -v github.com/spf13/hugo
 script:
-  - git submodule init  # TODO: isn't submodules:true above expected to do this already?
   - hugo
-
-## Rendering based on: https://github.com/haruair/haruair.github.io/blob/code/.travis.yml
-#language: go
-#go:
-#  - 1.7.1
-#script:
-#  - git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
-#  - go get -u -v github.com/spf13/hugo
-#  - git submodule init
-#  - hugo
 
 # Deploy to GitHub pages
 # https://www.metachris.com/2017/04/continuous-deployment-hugo---travis-ci--github-pages/
