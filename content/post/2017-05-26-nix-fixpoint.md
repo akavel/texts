@@ -1,6 +1,6 @@
 +++
 date = "2017-05-26T02:29:08+02:00"
-title = "Understanding Nix's *lib.fix*"
+title = "Understanding Nix's lib.fix"
 
 +++
 
