@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>FIXME</title>
+    </head>
+    <body>
+        <div class="post">
+            <!-- TODO[LATER]: on hover: show gray `#` with anchor permalink on index page -->
+            <h2><a href="/post/2017-05-26-nix-fixpoint">Understanding Nix&rsquo;s <em>lib.fix</em></a>
+                <span class="post-time">&mdash; 26.05.2017, 3 min.</span></h2>
+            <div class="post-tags"><a href="/tag/nix">[nix]</a></div>
+            <div class="post-lead">
+                <p>Understanding Nix&rsquo;s <a href="https://github.com/NixOS/nixpkgs/blob/dd2b1744ba36ab8d5b352cdac9c98a5e1eb71e8f/lib/trivial.nix#L63"><em>lib.fix</em></a> — a.k.a. <a href="https://en.wikipedia.org/wiki/Fixed-point_combinator">&ldquo;fixed point combinator&rdquo;</a> — and then based on it <em>lib.extend</em>, is crucial for understanding various NixOS features, including <em>overlays</em>.</p>
+            </div>
+            <div class="post-more"><a href="/post/2017-05-26-nix-fixpoint/">more...</a></div>
+        </div>
+        
+        <div class="post">
+            <h2><a href="/post/nix1">Nix explorations ep.1: Declarative per-user configuration</a>
+                <span class="post-time">&mdash; 8.09.2017, 11 min.</span></h2>
+            <div class="post-tags"><a href="/tag/nix">[nix]</a> <a href="/tag/nixos">[nixos]</a></div>
+            <div class="post-lead">
+                <p>One of the defining features of <a href='http://nixos.org'>Nix</a> is that it enables easy <em>declarative configuration</em>. In case of <a href='http://nixos.org/nixos'>NixOS</a> (the Nix-based <a href='https://en.wikipedia.org/wiki/Linux_distribution'>Linux distribution</a>), this specifically means that the whole OS is <em>totally and deterministically</em> configured by a single text file — located at: <code>/etc/nixos/configuration.nix</code>. As used with Nix, this gives multiple important benefits — one can take this file to another PC and easily build an exact<sup><a href='/post/nix1#dfref-footnote-1'>1</a></sup> clone of the original OS; tweaking configuration is safe because any changes can be easily reverted; at any moment, whole system configuration can be quickly backed up; and much more.</p>
+            </div>
+            <div class="post-more"><a href="/post/nix1">more...</a></div>
+        </div>
+        
+        <div class="quickie">
+            <h2><a href="/post/static-blog">static blog with GitHub, Hugo and Travis CI</a></h2>
+            <p>[TODO: links from .travis.yml to sources]</p>
+            <p>Sources:</p>
+            <ul>
+                <li><a href="http://gohugo.io/overview/quickstart/">Hugo Quickstart Guide</a></li>
+                <li><a href="https://themes.gohugo.io/">Hugo Themes Site</a></li>
+                <li><a href="https://docs.travis-ci.com/user/deployment/pages/">GitHub Pages Deployment - Travis CI</a></li>
+                <li><a href="https://docs.travis-ci.com/user/environment-variables#Defining-Variables-in-Repository-Settings">Environment Variables - Travis CI</a></li>
+                <li><a href="http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/">http://www.tutysara.net/posts/2016/09/27/automating-hugo-blog-deployment-to-github-pages-using-travis-ci/</a></li>
+                <li><a href="https://github.com/haruair/haruair.github.io/blob/code/.travis.yml">https://github.com/haruair/haruair.github.io/blob/code/.travis.yml</a></li>
+                <li><a href="https://www.metachris.com/2017/04/continuous-deployment-hugo---travis-ci--github-pages/">https://www.metachris.com/2017/04/continuous-deployment-hugo---travis-ci--github-pages/</a></li>
+            </ul>
+<pre><code>$ go get -v github.com/spf13/hugo
+$ hugo new site .
+$ hugo new post/test.md
+$ git submodule add https://github.com/jrutheiser/hugo-lithium-theme themes/hugo-lithium-theme
+$ cat &gt;.travis.yml &lt;&lt;EOF
+language: go
+git:
+  submodules: true
+install:
+  - go get -v github.com/spf13/hugo
+script:
+  - hugo
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: public
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
+  repo: akavel/akavel.github.io
+target_branch: master
+EOF
+</code></pre>
+        </div>
+        
+        <ul class="links">
+            <li><em>&ldquo;<a href="https://www.backblaze.com/">Backblaze</a> or <a href="https://www.crashplan.com/">CrashPlan</a>:  Both of these online backup services have $5/month unlimited plans [&hellip;]&rdquo;</em> (<a href="https://news.ycombinator.com/item?id=14329524">via</a>). <span class="tags"><a href="/tag/get-back">[get-back]</a> <a href="/tag/utils">[utils]</a></span></li>
+            <li><a href="https://twitter.com/PixelProspector">@PixelProspector</a>, <a href="https://twitter.com/gavanw">@gavanw</a>. <span class="tags"><a href="/tag/inspirations">[inspirations]</a> <a href="gaming">[gaming]</a></span></li>
+            <li><a href="https://twitter.com/Pixel_Dailies">@Pixel_Dailies</a> &mdash; i.e. daily themed pixel art from various artists. <span class="tags"><a href="/tag/inspirations">[inspirations]</a></span></li>
+        </ul>
+        
+        <div class="post">
+            <h2><a href="/post/multigit">multigit, or How To Allow Multiple Git Repos To Coexist Peacefully in The Same Directory</a>
+                <span class="post-time">&mdash; 8.09.2017, 11 min.</span></h2>
+            <div class="post-tags"><a href="/tag/nix">[nix]</a> <a href="/tag/utils">[utils]</a></div>
+            <div class="post-lead">
+                <p>Some 5 years ago <a href='http://stackoverflow.com/q/5661059/98528'>I was fairly annoyed by a small problem I couldn&rsquo;t solve</a>: I had two groups of scripts in my <em>~/bin/</em> directory at work (employer-specific vs. universal), and I wanted to keep them all versioned, but <em>in two separate repositories</em> (corresponding to the two groups). The <em>employer-specific</em> scripts were useless outside my office; they were project-specific, had hardcoded paths, etc. But I still wanted them backed up and versioned. The other group were some <em>universal</em> scripts. Those were &quot;timeless&quot;, I copied them from a different machine before, and would copy them again to some other machine in future. They were general, and I wanted to share them easily (and versioned too). And I didn&rsquo;t want to have them &quot;contaminated&quot; by the job-only ones. At the time I didn&rsquo;t resolve the problem, although I&rsquo;ve had some initial thoughts.</p>
+            </div>
+            <div class="post-more"><a href="/post/multigit">more...</a></div>
+        </div>
+    </body>
+</html>
