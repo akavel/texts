@@ -1,3 +1,51 @@
 [submodule "themes/hugo-lithium-theme"]
 	path = themes/hugo-lithium-theme
 	url = https://github.com/jrutheiser/hugo-lithium-theme
+[submodule "themes/heathen-hugo"]
+	path = themes/heathen-hugo
+	url = https://gitlab.com/doctorj/heathen-hugo.git
+[submodule "themes/slim"]
+	path = themes/slim
+	url = https://github.com/zhe/hugo-theme-slim
+[submodule "themes/hugo-zen"]
+	path = themes/hugo-zen
+	url = https://github.com/rakuishi/hugo-zen
+[submodule "themes/hugo-theme-mijnimal"]
+	path = themes/hugo-theme-mijnimal
+	url = https://github.com/ijanos/hugo-theme-mijnimal
+[submodule "themes/gindoro"]
+	path = themes/gindoro
+	url = https://github.com/cdipaolo/gindoro
+[submodule "themes/hemingway"]
+	path = themes/hemingway
+	url = https://github.com/tanksuzuki/hemingway
+[submodule "themes/hugo-theme-vec"]
+	path = themes/hugo-theme-vec
+	url = https://github.com/IvanChou/hugo-theme-vec
+[submodule "themes/hugo-morphism"]
+	path = themes/hugo-morphism
+	url = https://github.com/shawnohare/hugo-morphism
+[submodule "themes/simple-a"]
+	path = themes/simple-a
+	url = https://github.com/AlexFinn/simple-a
+[submodule "themes/cocoa-hugo-theme"]
+	path = themes/cocoa-hugo-theme
+	url = https://github.com/nishanths/cocoa-hugo-theme
+[submodule "themes/hugo-steam-theme"]
+	path = themes/hugo-steam-theme
+	url = https://github.com/digitalcraftsman/hugo-steam-theme
+[submodule "themes/cocoa-eh"]
+	path = themes/cocoa-eh
+	url = https://github.com/fuegowolf/cocoa-eh-hugo-theme
+[submodule "themes/sustain"]
+	path = themes/sustain
+	url = https://github.com/nurlansu/hugo-sustain
+[submodule "themes/crisp"]
+	path = themes/crisp
+	url = https://github.com/zenithar/hugo-theme-crisp
+[submodule "themes/amp"]
+	path = themes/amp
+	url = https://github.com/pdevty/amp
+[submodule "themes/minos"]
+	path = themes/minos
+	url = https://github.com/carsonip/hugo-theme-minos
