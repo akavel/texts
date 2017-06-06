@@ -1,13 +1,109 @@
 <html>
     <head>
         <title>FIXME</title>
+        <style type="text/css">
+            body {
+                -font-family: Georgia;
+                font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            }
+            p, ul {
+                line-height: 1.3;
+            }
+            pre {
+                background: #fffff5;
+                padding: 1em 2em;
+                overflow-x: auto; /* does this scroll? */
+                tab-size: 4;
+                border-left: 1px dashed #cc0;
+            }
+            .post, .quickie, .links {
+                padding: 0 10%;                
+                margin-top: 1em;
+            }
+            h2 {
+                padding-bottom: 0;
+                margin-left: -2ex;
+                margin-bottom: .5ex;
+                font-family: "Trebuchet MS", Helvetica, sans-serif;
+                letter-spacing: -.3;
+            }
+            h2 a {
+                color: black;
+            }
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .post-time {
+                margin-left: 1em;
+                color: #ddd;
+                float: right;
+                margin-right: -2ex;
+            }
+            div.tags {
+                padding: 0; margin: 0;
+            }
+            .tags a {
+                color: #fff;
+                background: #ddd;
+                font-family: helvetica;
+                font-size: 90%;
+                padding: 0 .6ex;
+                margin: 0 .4ex;
+                border-radius: 5px;
+            }
+            .tags a:hover {
+                -color: #0000ee !important;
+                background: #aaa !important;
+                text-decoration: none;
+            }
+            .post .tags a {
+                margin-left: 0;
+            }
+            .post .post-lead {
+                text-align: justify;
+            }
+            .post-lead > p {
+                margin-top: .4em;
+            }
+            .quickie h2 + p {
+                margin-top: .6em;
+            }
+            .post-more {
+                font-style: italic;
+                font-weight: bold;
+                text-align: right;
+                padding-right: 2em;
+                margin-top: -1em;
+            }
+            
+            .links {
+                background: #eed;
+            }
+            .links ul {
+                padding: 1em 2em;
+            }
+            .links .tags {
+                margin-left: .8em;
+            }
+            .links .tags a {
+                color: #eee;
+                -background: #cfcfcf;
+                background: #ccb;
+                font-size: 80%;
+                -font-style: italic;
+                -letter-spacing: .15;
+            }
+        </style>
     </head>
     <body>
         <div class="post">
             <!-- TODO[LATER]: on hover: show gray `#` with anchor permalink on index page -->
             <h2><a href="/post/2017-05-26-nix-fixpoint">Understanding Nix&rsquo;s <em>lib.fix</em></a>
                 <span class="post-time">&mdash; 26.05.2017, 3 min.</span></h2>
-            <div class="post-tags"><a href="/tag/nix">[nix]</a></div>
+            <div class="tags"><a href="/tag/nix">nix</a></div>
             <div class="post-lead">
                 <p>Understanding Nix&rsquo;s <a href="https://github.com/NixOS/nixpkgs/blob/dd2b1744ba36ab8d5b352cdac9c98a5e1eb71e8f/lib/trivial.nix#L63"><em>lib.fix</em></a> — a.k.a. <a href="https://en.wikipedia.org/wiki/Fixed-point_combinator">&ldquo;fixed point combinator&rdquo;</a> — and then based on it <em>lib.extend</em>, is crucial for understanding various NixOS features, including <em>overlays</em>.</p>
             </div>
@@ -17,7 +113,7 @@
         <div class="post">
             <h2><a href="/post/nix1">Nix explorations ep.1: Declarative per-user configuration</a>
                 <span class="post-time">&mdash; 8.09.2017, 11 min.</span></h2>
-            <div class="post-tags"><a href="/tag/nix">[nix]</a> <a href="/tag/nixos">[nixos]</a></div>
+            <div class="tags"><a href="/tag/nix">nix</a> <a href="/tag/nixos">nixos</a></div>
             <div class="post-lead">
                 <p>One of the defining features of <a href='http://nixos.org'>Nix</a> is that it enables easy <em>declarative configuration</em>. In case of <a href='http://nixos.org/nixos'>NixOS</a> (the Nix-based <a href='https://en.wikipedia.org/wiki/Linux_distribution'>Linux distribution</a>), this specifically means that the whole OS is <em>totally and deterministically</em> configured by a single text file — located at: <code>/etc/nixos/configuration.nix</code>. As used with Nix, this gives multiple important benefits — one can take this file to another PC and easily build an exact<sup><a href='/post/nix1#dfref-footnote-1'>1</a></sup> clone of the original OS; tweaking configuration is safe because any changes can be easily reverted; at any moment, whole system configuration can be quickly backed up; and much more.</p>
             </div>
@@ -63,16 +159,18 @@ EOF
 </code></pre>
         </div>
         
-        <ul class="links">
-            <li><em>&ldquo;<a href="https://www.backblaze.com/">Backblaze</a> or <a href="https://www.crashplan.com/">CrashPlan</a>:  Both of these online backup services have $5/month unlimited plans [&hellip;]&rdquo;</em> (<a href="https://news.ycombinator.com/item?id=14329524">via</a>). <span class="tags"><a href="/tag/get-back">[get-back]</a> <a href="/tag/utils">[utils]</a></span></li>
-            <li><a href="https://twitter.com/PixelProspector">@PixelProspector</a>, <a href="https://twitter.com/gavanw">@gavanw</a>. <span class="tags"><a href="/tag/inspirations">[inspirations]</a> <a href="gaming">[gaming]</a></span></li>
-            <li><a href="https://twitter.com/Pixel_Dailies">@Pixel_Dailies</a> &mdash; i.e. daily themed pixel art from various artists. <span class="tags"><a href="/tag/inspirations">[inspirations]</a></span></li>
-        </ul>
+        <div class="links">
+            <ul class="links">
+                <li><em>&ldquo;<a href="https://www.backblaze.com/">Backblaze</a> or <a href="https://www.crashplan.com/">CrashPlan</a>:  Both of these online backup services have $5/month unlimited plans [&hellip;]&rdquo;</em> (<a href="https://news.ycombinator.com/item?id=14329524">via</a>). <span class="tags"><a href="/tag/get-back">get-back</a> <a href="/tag/utils">utils</a></span></li>
+                <li><a href="https://twitter.com/PixelProspector">@PixelProspector</a>, <a href="https://twitter.com/gavanw">@gavanw</a>. <span class="tags"><a href="/tag/inspirations">inspirations</a> <a href="gaming">gaming</a></span></li>
+                <li><a href="https://twitter.com/Pixel_Dailies">@Pixel_Dailies</a> &mdash; i.e. daily themed pixel art from various artists. <span class="tags"><a href="/tag/inspirations">inspirations</a></span></li>
+            </ul>
+        </div>
         
         <div class="post">
             <h2><a href="/post/multigit">multigit, or How To Allow Multiple Git Repos To Coexist Peacefully in The Same Directory</a>
                 <span class="post-time">&mdash; 8.09.2017, 11 min.</span></h2>
-            <div class="post-tags"><a href="/tag/nix">[nix]</a> <a href="/tag/utils">[utils]</a></div>
+            <div class="tags"><a href="/tag/nix">nix</a> <a href="/tag/utils">utils</a></div>
             <div class="post-lead">
                 <p>Some 5 years ago <a href='http://stackoverflow.com/q/5661059/98528'>I was fairly annoyed by a small problem I couldn&rsquo;t solve</a>: I had two groups of scripts in my <em>~/bin/</em> directory at work (employer-specific vs. universal), and I wanted to keep them all versioned, but <em>in two separate repositories</em> (corresponding to the two groups). The <em>employer-specific</em> scripts were useless outside my office; they were project-specific, had hardcoded paths, etc. But I still wanted them backed up and versioned. The other group were some <em>universal</em> scripts. Those were &quot;timeless&quot;, I copied them from a different machine before, and would copy them again to some other machine in future. They were general, and I wanted to share them easily (and versioned too). And I didn&rsquo;t want to have them &quot;contaminated&quot; by the job-only ones. At the time I didn&rsquo;t resolve the problem, although I&rsquo;ve had some initial thoughts.</p>
             </div>
