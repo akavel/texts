@@ -2,3 +2,11 @@ baseURL = "https://akavel.github.io/"
 languageCode = "en-us"
 title = "akavel"
 theme = "hugo-lithium-theme"
+staticDir = ["static"]
+
+[frontmatter]
+# Extract post date from file name if possible.
+# See: https://github.com/gohugoio/hugo/pull/4494
+# TODO(akavel): why this doesn't work for me?
+date = [":filename", ":default"]
+
